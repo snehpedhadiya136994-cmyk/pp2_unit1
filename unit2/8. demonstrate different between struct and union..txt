@@ -1,0 +1,31 @@
+
+#include <stdio.h>
+
+struct s {
+    int a;
+    float b;
+};
+
+union u {
+    int a;
+    float b;
+};
+
+int main() {
+    struct s s1;
+    union u u1;
+
+    s1.a = 10;
+    s1.b = 20.5;
+
+    u1.a = 10;
+    u1.b = 20.5;
+
+    printf("Structure: a=%d b=%.2f\n", s1.a, s1.b);
+    printf("Union: a=%d b=%.2f\n", u1.a, u1.b);
+
+    printf("Size of structure: %lu\n", sizeof(s1));
+    printf("Size of union: %lu\n", sizeof(u1));
+
+    return 0;
+}
