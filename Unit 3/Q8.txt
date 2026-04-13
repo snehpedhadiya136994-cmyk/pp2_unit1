@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int r = 2, c = 2;
+    int **m1, **m2;
+
+    m1 = (int**)malloc(r * sizeof(int*));
+    m2 = (int**)malloc(r * sizeof(int*));
+    for(int i=0; i<r; i++) {
+        m1[i] = (int*)malloc(c * sizeof(int));
+        m2[i] = (int*)malloc(c * sizeof(int));
+    }
+
+    // Initialize and subtract (Logic only for brevity)
+    printf("Result of Subtraction:\n");
+    for(int i=0; i<r; i++) {
+        for(int j=0; j<c; j++) {
+            m1[i][j] = (i+j+5); m2[i][j] = (i+j); // Dummy values
+            printf("%d ", m1[i][j] - m2[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
